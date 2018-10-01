@@ -1,0 +1,10 @@
+<h1><a href="https://angular.io/tutorial/toh-pt5#add-routes">Add routes</a> - <i>Routes tell the router which view to display when a user clicks a link or pastes a URL into the browser address bar.</i></h1>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" 
+    [class.selected]="hero === selectedHero" 
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
