@@ -9,15 +9,8 @@ import { MessagesService } from '../messages.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  @Input() 
   heroes: Hero[];
-  selectedHero: Hero;
   constructor(private heroService: HeroService, private messageService: MessagesService) { 
-  }
-  onSelect(hero: Hero): boolean {
-    this.selectedHero = hero;
-    this.messageService.add('Selected a hero at ' + new Date());
-    return true;
   }
   ngOnInit() {
     this.getHeroes();
